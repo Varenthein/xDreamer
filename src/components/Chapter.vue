@@ -1,21 +1,22 @@
 <template>
   <div class="chapter">
-      TEST
+      TEST {{chapter}}
   </div>
 </template>
 
 <script>
- var Dexie = require('Dexie')
-
  export default {
-  name: 'chapter',
-  props: ['data'],
+  props: ["chapter"],
   data () {
     return {
-      chapter: {},
-      db: {}
+       chapterData: this.chapter
     }
-  }
+  },
+  watch: {
+     chapter: function (chapterChanged) {
+       this.chapterData = chapterChanged;
+     }
+   },
 }
 </script>
 

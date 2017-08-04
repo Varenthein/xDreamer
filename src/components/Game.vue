@@ -1,7 +1,7 @@
 <template>
   <div class="game">
     <h1 class="game__loader" v-if="!chapter">Loading...</h1>
-    {{ chapter }}
+    <chapter ng-if="chapter" :chapter="chapter"></chapter>
   </div>
 </template>
 
@@ -9,6 +9,7 @@
 
  /* load db starting structure */
  import { _DB, dbService, chapterService, dataService } from '@/assets/db/services.js'
+ import Chapter from './Chapter'
 
  export default {
   name: 'game',
@@ -36,6 +37,9 @@
 
          }).catch((error) => { console.error("Couldn't connect to DataBase", error) });
 
+  },
+  components: {
+    'chapter': Chapter
   },
   methods: {
     loadChapter: function(chapterId) {
