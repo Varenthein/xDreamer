@@ -24,7 +24,7 @@ export default {
 <style>
 
 body {
-    background: url(../assets/img/game__back.jpg) no-repeat fixed center center;
+    background: url(../assets/img/game__back-forest.jpg) no-repeat fixed center center;
     background-size: cover;
 }
 
